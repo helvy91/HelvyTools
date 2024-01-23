@@ -5,7 +5,7 @@ using HelvyTools.Html.Data;
 using HelvyTools.Extensions;
 using System.Collections.Generic;
 
-namespace CKHome.Tools.Html
+namespace HelvyTools.Html
 {
     public class HtmlParser
     {
