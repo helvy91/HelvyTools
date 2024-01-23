@@ -4,13 +4,13 @@ using HelvyTools.Configuration;
 
 using Net = System.Net.Mail;
 
-namespace CKHome.Tools.Smtp
+namespace HelvyTools.Smtp
 {
     public class SmtpClient
     {
-        private readonly Configuration.SmtpConfiguration _config;
+        private readonly Configuration.Configuration.SmtpConfiguration _config;
 
-        public SmtpClient(Configuration.SmtpConfiguration config)
+        public SmtpClient(Configuration.Configuration.SmtpConfiguration config)
         {
             _config = config;
         }
