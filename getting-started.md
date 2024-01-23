@@ -53,4 +53,41 @@ var httpClient = new HelvyTools.Http.HttpClient(netHttpClient);
 var response = httpClient.GetAsync<string>("https://test.pl");
 ```
 
+4. SQL connection:
 
+Connecting to SQL without Entity or other ORM is quite complex thing in .NET. With HelvyTools.MySqlConnector it's much easier. If name of property is different than column in table, use MySqlPropertyName as shown below. Then just create MySqlConnector instance and use ExecuteCommand() function.
+
+```
+public class TestSqlClass
+{
+    [MySqlPropertyName("id")]
+    public int Id { get; set; }
+
+    [MySqlPropertyName("customer_name")]
+    public string Name { get; set; }
+
+    [MySqlPropertyName("customer_surname")]
+    public string Surname { get; set; }
+}
+```
+
+```
+var sqlConnector = new HelvyTools.Sql.MySqlConnector("connString");
+
+sqlConnector.ExecuteCommandAsync("UPDATE test SET value = 1 WHERE key = 'test'");
+var testResult = sqlConnector.ExecuteCommandAsync<Test>("SELECT id, name,surname FROM testDb");
+```
+
+5. Serialization
+
+Serializing in .NET requires at least several lines of code. If we use this code over and over in project we have a lot of additional code we have to maintain, plus writing the same code repeatedly requires more time.
+
+```
+var test = new Test() { Property1 = 1 };
+
+var xmlSerialized = XmlUtils.Serialize<Test>(test);
+var xmlDeserialized = XmlUtils.Deserialize<Test>(xmlSerialized);
+
+var jsonSerialized = JsonUtils.Serialize(test);
+var jsonDeserialized = JsonUtils.Deserialize<Test>(jsonSerialized);
+```
