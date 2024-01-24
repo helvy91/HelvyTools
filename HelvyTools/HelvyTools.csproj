@@ -5,6 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<PackageId>HelvyTools</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>helvy91</Authors>
+	<Company>helvy91</Company>
+        <PackageDescription>Useful tools to make creating small projects easier.</PackageDescription>
+    <RepositoryUrl>https://github.com/helvy91/HelvyTools</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
