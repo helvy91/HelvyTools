@@ -18,13 +18,8 @@ HelvyTools is a lightweight utility library for C# .NET that aims to make everyd
 2. Small Footprint: Keep your project lightweight with a focused set of utilities.
 3. Ease of Use: Quickly integrate HelvyTools into your project without a steep learning curve.
 
-📦 Getting Started:
-
-1. Install the library via NuGet Package Manager: Install-Package HelvyTools
-2. Import the namespace: using HelvyTools;
-3. Simplify your project tasks with HelvyTools!
-
 Learn More:
 🌐 Explore basic usage and examples in the documentation.
+- [Getting Started](/getting-started.md)
 
 Keep it simple with HelvyTools! 🛠
