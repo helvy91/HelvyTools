@@ -91,3 +91,18 @@ var xmlDeserialized = XmlUtils.Deserialize<Test>(xmlSerialized);
 var jsonSerialized = JsonUtils.Serialize(test);
 var jsonDeserialized = JsonUtils.Deserialize<Test>(jsonSerialized);
 ```
+
+6. HTML parsing
+
+When parsing HTML I always used HtmlAgilityPack. Unfortunately most of the time the interface was too complex and required some redundant code. With HelvyTools.HtmlParser parsing HTML is easy and straightforward. Most needed functions with simple  interface in one class.
+
+```
+var html = @"<html>
+                <body>
+                    <h1>TEST TITLE</h1>
+                </body>
+              </html>";
+var parser = new HtmlParser();
+var tag = parser.GetElementByTagName("h1", html, 3);
+Console.WriteLine(tag.InnerText); 
+```
